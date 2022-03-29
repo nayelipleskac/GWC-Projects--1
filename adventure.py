@@ -1,6 +1,8 @@
 import time, random
 
 #randomize rooms
+#separate upstairs and downstairs into lists
+
 rooms = ['basement', 'kitchen', 'garden', 'roof', 'balcony']
 random_room = str(random.choice(rooms))
 print(random_room)
