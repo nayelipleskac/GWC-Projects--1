@@ -6,6 +6,7 @@ import time, random
 rooms = ['basement', 'kitchen', 'garden', 'roof', 'balcony']
 random_room = str(random.choice(rooms))
 print(random_room)
+done = False
 
 def find_treasure(options):
   input2 = input('there are two paths ahead: ' + options).lower()
@@ -13,15 +14,16 @@ def find_treasure(options):
     print('searching...')
     time.sleep(3)
     print('excellent! you found the treasure :D')
+    done = True
+    break
     
-  if input2 != random_room:
+  else:
     print('searching...')
     time.sleep(3)
     print('no treasure here!')
     print('turning back now...')
     time.sleep(2)
-  else:
-    print('enter one of the choices above')
+
   
 
 while True: 
@@ -29,61 +31,17 @@ while True:
   input1 = input('Type in upstairs or downstairs: ').lower()
   
   if input1 == 'downstairs':
-    find_treasure('to the kitchen or to the garden? ')
-    # input2 = input('there are two paths ahead: to the basement, to the kitchen or to the garden? ').lower()
-    # if input2 == random_room:
-    #   print('searching...')
-    #   time.sleep(3)
-    #   print('excellent! you found the treasure :D')
-    # else:
-    #   print('searching...')
-    #   time.sleep(3)
-    #   print('no treasure here!')
-    #   print('turning back now...')
-    #   time.sleep(2)
-    # if input2 == 'basement':
-    #   print('searching...')
-    #   time.sleep(3)
-    #   input3 = input('wrong way!')
-    # elif input2 == 'kitchen':
-    #   print('searching...')
-    #   time.sleep(3)
-    #   print('excellent! you found the treasure :D')
-    #   break
-    # elif input2 == 'garden':
-    #   print('searching...')
-    #   time.sleep(3)
-    #   print('no treasure here!')
-    # else:
-    #   print('enter one of the choices above')
+    find_treasure('to the basement, kitchen or the garden? ')
+    
+   
+
   elif input1 == 'upstairs':
     find_treasure('balcony or roof? ')
+
+
   else: 
     print('enter downstairs or upstairs')
+
+
     
-    # if input2 == random_room:
-    #   print('searching...')
-    #   time.sleep(3)
-    #   print('excellent! you found the treasure :D')
-    # else:
-    #   print('searching...')
-    #   time.sleep(3)
-    #   print('no treasure here!')
-    #   print('turning back now...')
-    #   time.sleep(2)
-      
-  #   input4 = input('Two more paths lay ahead: balcony or roof? ').lower()
-  #   if input4 == 'roof':
-  #     print('searching...')
-  #     time.sleep(3)
-  #     print('you found the treasure :D')
-  #     break
-  #   elif input4 == 'balcony':
-  #     print('searching...')
-  #     time.sleep(3)
-  #     print('you missed the treasure..')
-  #   else: 
-  #     print('enter one of the choices above')
-  # else:
-  #   print('enter downstairs or upstairs')
-      
+    
